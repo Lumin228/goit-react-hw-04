@@ -1,0 +1,19 @@
+
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.descr{
+    display: flex;
+    background-color: rgb(39, 39, 39);
+    margin: 0;
+    width: 80%;
+    height: 5%;
+    align-items: center;
+    justify-content: center;
+}

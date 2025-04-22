@@ -1,0 +1,8 @@
+.comps{
+    display: flex;
+    flex-direction: column;
+}
+
+.isHidden {
+    display: none;
+}
