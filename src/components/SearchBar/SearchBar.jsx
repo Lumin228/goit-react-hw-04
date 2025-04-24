@@ -1,4 +1,7 @@
 import css from "../SearchBar/SearchBar.module.css";
+import toast, { Toaster } from 'react-hot-toast';
+
+
 
 function SearchBar({ onSearch }) {
   const handleSubmit = (evt, page) => {
@@ -6,7 +9,7 @@ function SearchBar({ onSearch }) {
     const form = evt.target;
 	const topic = form.elements.topic.value;
     if (topic === "") {
-      return alert ('sorry type smth')
+      return toast.error("This didn't work.")
     }
     onSearch(topic);
     form.reset();
@@ -24,6 +27,7 @@ function SearchBar({ onSearch }) {
         />
         <button type="submit">Search</button>
       </form>
+      <Toaster />
     </header>
   );
 }

@@ -82,7 +82,7 @@ function App() {
   <div className={css.comps}>
     <SearchBar onSearch={handleSearch}/>
     {loading && <Loader />}
-    {error && <Error />}
+    {error && <ErrorMessage />}
     {articles.length > 0 && <ImageGallery result={articles}/>}
     {articles.length > 0 && <LoadMoreBtn onSubmit={loadMore}/>}
   </div> 
