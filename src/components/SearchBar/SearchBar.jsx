@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 function SearchBar({ onSearch }) {
-  const handleSubmit = (evt, page) => {
+  const handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.target;
 	const topic = form.elements.topic.value;

@@ -1,6 +1,5 @@
 import css from '../ImageGallery/ImageGallery.module.css'
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -16,35 +15,29 @@ const customStyles = {
       justifyContent: 'center',
       backgroundColor: 'rgba(59, 59, 59, 0.75)',
       flexDirection: 'column',
-      width:' 100%',
+      width:'100%',
       height: '100%'
       
     },
   };
   Modal.setAppElement('#root');
 
-export const ImagesCard = ({ data }) => {
-    let subtitle;
-    
 
-      const [modalIsOpen, setIsOpen] = React.useState(false);
+export const ImageModal = ({data,  modalIsOpen, setIsOpen}) => {
+ 
+        let subtitle
 
-      function openModal() {
-        setIsOpen(true);
-      }
-    
-      function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-    }
-    
-      function closeModal() {
-        setIsOpen(false);
-      }
+          function afterOpenModal() {
+            // references are now sync'd and can be accessed.
+        }
+        
+          function closeModal() {
+            setIsOpen(false);
+          }
+          
+          
 
     return (
-      <div>
-        <img src={data.urls.small_s3} alt={data.alt_description} width={500} height={310} onClick={openModal}/>
-
         <Modal
         className={css.modal}
         isOpen={modalIsOpen}
@@ -54,9 +47,8 @@ export const ImagesCard = ({ data }) => {
         style={customStyles}
       >
         <h2 ref={subtitle} className={css.descr}>{data.alt_description}</h2>
-       <img src={data.urls.full} alt={data.alt_description} width={'80%'} height={'70%'} />
-      </Modal>
-      </div>
-    );
-  };
-  
+        <img src={data.urls.full} alt={data.alt_description} width={'80%'} height={'70%'} />
+        </Modal>
+    )
+    
+}

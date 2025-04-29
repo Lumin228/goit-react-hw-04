@@ -1,7 +1,7 @@
-import { ImagesCard } from "./ImageCard";
+import { ImagesCard } from "../ImgeCard/ImageCard";
 import css from '../ImageGallery/ImageGallery.module.css'
 
-export const ImageGallery = ({ result }) => {
+export const ImageGallery = ({ result, openModal }) => {
     if (!Array.isArray(result)) {
       return <p>No images found.</p>;
     }
@@ -10,7 +10,7 @@ export const ImageGallery = ({ result }) => {
       <ul className={css.list}>
         {result.map((item) => (
           <li key={item.id}>
-            <ImagesCard data={item} />
+            <ImagesCard data={item} openModal={openModal}/>
           </li>
         ))}
       </ul>
