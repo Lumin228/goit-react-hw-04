@@ -28,7 +28,7 @@ export const ImageModal = ({data,  modalIsOpen, setIsOpen}) => {
         let subtitle
 
           function afterOpenModal() {
-            // references are now sync'd and can be accessed.
+            
         }
         
           function closeModal() {
